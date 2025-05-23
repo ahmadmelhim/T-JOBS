@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T JOBS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assert/css/base.css">
+  <link rel="stylesheet" href="./assert/css/main.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-mainColor fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./assert/image/logo.png"  alt="شعار الموقع">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="#">إعلن عن وظيفة</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">البحث عن عمل جديد</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">اتصل بنا</a></li>
+      </ul>
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i> تسجيل دخول</a></li>
+        <li class="nav-item"><a class="nav-link" href="./register.html"><i class="fa-solid fa-user-plus"></i> إنشاء حساب</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Image Section -->
+<section class="imag-sec w-100 bg-dark position-relative pt-5">
+  <img src="./assert/image/backgrounds.jpg" class="w-100" alt="صورة أعمال" >
+  <div class="position-absolute top-50 start-50 translate-middle text-center ">
+    <h2 class="display-5 fw-bold">نحو مستقبل مهني أفضل</h2>
+    <p class="lead">مع T-JOBS، الفرص بين يديك</p>
+    <a href="./register.html" class="btn btn-primary px-4 py-2 mt-2">سجل الآن</a>
+  </div>
+</section>
+
+<!-- Search Section -->
+<div class="search bg-secColor p-5 text-center ">
+  <div class="container">
+    <h3 class="mb-4 text-primary fw-bold">ابحث عن ما تحتاجه بسهولة</h3>
+    <form class="d-flex flex-wrap justify-content-center gap-2">
+      <div class="input-group w-75 w-md-50">
+        <span class="input-group-text bg-white"><i class="fas fa-search text-secondary"></i></span>
+        <input type="text" class="form-control" placeholder="ابحث في شو بدك والسوق مفتوح">
+      </div>
+      <button type="submit" class="btn btn-primary px-4">بحث</button>
+    </form>
+  </div>
+</div>
+
+<!-- Latest Works Section -->
+<section class="py-5 bg-mainColor text-white">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">أحدث الأعمال المنشورة</h2>
+    <div class="row g-4">
+
+      <!-- Work Card 1 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card shadow-sm border-0 h-100 text-center">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top img-fluid" alt="تصميم ديكور داخلي">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">تصميم ديكور داخلي</h5>
+            <div class="mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>
+              <i class="far fa-star text-warning"></i>
+            </div>
+            <p class="card-text text-muted">تصميم ديكور عصري للمنازل والمكاتب</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> نابلس</span>
+              <div>
+                <a href="#" class="btn btn-sm btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-success btn-sm ms-2"><i class="fab fa-whatsapp"></i> تواصل</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 2 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card shadow-sm border-0 h-100 text-center">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top img-fluid" alt="أعمال كهرباء وصيانة">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">أعمال كهرباء وصيانة</h5>
+            <div class="mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="far fa-star text-warning"></i>
+            </div>
+            <p class="card-text text-muted">كهربائي محترف لصيانة المنازل وتركيب الأنظمة الكهربائية</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> جنين</span>
+              <div>
+                <a href="#" class="btn btn-sm btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-success btn-sm ms-2"><i class="fab fa-whatsapp"></i> تواصل</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Card 3 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="card shadow-sm border-0 h-100 text-center">
+          <img src="https://via.placeholder.com/400x250" class="card-img-top img-fluid" alt="نجار محترف">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">نجار محترف</h5>
+            <div class="mb-2">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>
+              <i class="far fa-star text-warning"></i>
+              <i class="far fa-star text-warning"></i>
+            </div>
+            <p class="card-text text-muted">تفصيل غرف نوم ومطابخ حسب الطلب بأسعار منافسة</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> الخليل</span>
+              <div>
+                <a href="#" class="btn btn-sm btn-primary">عرض التفاصيل</a>
+                <a href="#" class="btn btn-success btn-sm ms-2"><i class="fab fa-whatsapp"></i> تواصل</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features-section py-5 bg-secColor">
+  <div class="container">
+    <h2 class="text-center mb-5 fs-2 text-mainColor">لماذا T-JOBS هو الخيار الأفضل؟</h2>
+    <div class="row text-center gy-4 align-items-stretch">
+
+      <div class="features-section-card col-md-4 d-flex">
+        <div class="p-4 bg-white shadow rounded w-100 d-flex flex-column align-items-center justify-content-start">
+          <div class="section-card icon-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3" >
+            <i class="fa-solid fa-bolt fa-lg"></i>
+          </div>
+          <h5 class="mb-2 text-black fw-bold">سهل وسريع</h5>
+          <p class="text-muted">نساعدك في إيجاد أو نشر وظيفة خلال دقائق وبخطوات بسيطة.</p>
+        </div>
+      </div>
+
+      <div class="features-section-card col-md-4 d-flex">
+        <div class="p-4 bg-white shadow rounded w-100 d-flex flex-column align-items-center justify-content-start">
+          <div class="section-card icon-circle bg-success text-white d-inline-flex justify-content-center align-items-center mb-3" >
+            <i class="fa-solid fa-user-check fa-lg"></i>
+          </div>
+          <h5 class="mb-2 text-black fw-bold">موثوق وآمن</h5>
+          <p class="text-muted">جميع الحسابات يتم التحقق منها لتوفير بيئة موثوقة لجميع الأطراف.</p>
+        </div>
+      </div>
+
+      <div class="features-section-card col-md-4 d-flex">
+        <div class="p-4 bg-white shadow rounded w-100 d-flex flex-column align-items-center justify-content-start">
+          <div class="section-card icon-circle bg-warning text-white d-inline-flex justify-content-center align-items-center mb-3" >
+            <i class="fa-solid fa-briefcase fa-lg"></i>
+          </div>
+          <h5 class="mb-2 text-black fw-bold">آلاف الوظائف</h5>
+          <p class="text-muted">استعرض وظائف من مختلف المدن والمجالات يوميًا.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="./register.html" class="btn btn-primary px-5 py-2">سجّل مجانًا الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-mainColor text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 align-items-start">
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <img src="./assert/image/logo.png" class="w-50 mb-3" alt="شعار">
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">اتصل بنا</a></li>
+          <li><a href="#">خارطة الموقع</a></li>
+        </ul>
+      </div>
+
+      <!-- لصاحب العمل -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">لصاحب العمل</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">أعلن عن وظيفة</a></li>
+          <li><a href="#">تصفح السيرة الذاتية</a></li>
+          <li><a href="#">لماذا تي-جوبس؟</a></li>
+        </ul>
+      </div>
+
+      <!-- للباحثين عن عمل -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">للباحثين عن عمل</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">حمّل سيرتك الذاتية</a></li>
+          <li><a href="#">تصفح الوظائف</a></li>
+        </ul>
+      </div>
+
+      <!-- المدن -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">ابحث عن وظيفة</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">وظائف في جنين</a></li>
+          <li><a href="#">وظائف في رام الله</a></li>
+          <li><a href="#">وظائف في الخليل</a></li>
+          <li><a href="#">وظائف في نابلس</a></li>
+          <li><a href="#">وظائف في القدس</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-light my-4">
+    <p class="text-center mb-0 text-white-50">&copy; 2025 T-JOBS - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

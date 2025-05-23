@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T JOBS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assert/css/base.css">
+      <link rel="stylesheet" href="./assert/css/main.css">
+    <link rel="stylesheet" href="./assert/css/register.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-mainColor fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./assert/image/logo.png" alt="شعار الموقع">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="#">إعلن عن وظيفة</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">البحث عن عمل جديد</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">اتصل بنا</a></li>
+      </ul>
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i> تسجيل دخول</a></li>
+        <li class="nav-item"><a class="nav-link" href="./register.html"><i class="fa-solid fa-user-plus"></i> إنشاء حساب</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- signup Section -->
+  <div class="bg-secColor pt-5 mt-5">
+    <div class="container signup-container vh-100">
+        <div class="signup-box bg-mainColor">
+            <h2>إنشاء حساب جديد</h2>
+            <form class="signup-form">
+                <div class="mb-3 text-start">
+                    <label for="name" class="form-label">الاسم الكامل</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="id" class="form-label">رقم الهوية</label>
+                    <input type="number" class="form-control" id="id" name="id" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="phone" class="form-label">رقم الهاتف</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">كلمة المرور</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="confirm-password" class="form-label">تأكيد كلمة المرور</label>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">إنشاء حساب</button>
+            </form>
+            <div class="links">
+                <a href="./login.html">لديك حساب بالفعل؟ تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+<!-- Footer -->
+<footer class="footer bg-mainColor text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 align-items-start">
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <img src="./assert/image/logo.png" class="w-50 mb-3" alt="شعار">
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">اتصل بنا</a></li>
+          <li><a href="#">خارطة الموقع</a></li>
+        </ul>
+      </div>
+
+      <!-- لصاحب العمل -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">لصاحب العمل</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">أعلن عن وظيفة</a></li>
+          <li><a href="#">تصفح السيرة الذاتية</a></li>
+          <li><a href="#">لماذا تي-جوبس؟</a></li>
+        </ul>
+      </div>
+
+      <!-- للباحثين عن عمل -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">للباحثين عن عمل</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">حمّل سيرتك الذاتية</a></li>
+          <li><a href="#">تصفح الوظائف</a></li>
+        </ul>
+      </div>
+
+      <!-- المدن -->
+      <div class="col-6 col-md-3 d-flex flex-column h-100">
+        <h5 class="mb-3">ابحث عن وظيفة</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li><a href="#">وظائف في جنين</a></li>
+          <li><a href="#">وظائف في رام الله</a></li>
+          <li><a href="#">وظائف في الخليل</a></li>
+          <li><a href="#">وظائف في نابلس</a></li>
+          <li><a href="#">وظائف في القدس</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-light my-4">
+    <p class="text-center mb-0 text-white-50">&copy; 2025 T-JOBS - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
