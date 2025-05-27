@@ -32,7 +32,9 @@ body{
     color: #fff;
 }
 
-
+.mt-10{
+    margin-top: 80px;
+}
 ul{
     list-style-type: none;
 }

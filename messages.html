@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>المحادثات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assert/css/base.css">
+  <link rel="stylesheet" href="./assert/css/main.css">
+</head>
+<body >
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <!-- الشريط الجانبي -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 bg-secondary text-white min-vh-100 gap-4">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3">
+        <div class="mb-4 w-100 text-center">
+          <img src="./assert/image/logo.png" alt="T JOBS" class="img-fluid w-50">
+        </div>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 gap-4" id="menu">
+        <li class="nav-item w-100 ">
+        <a href="./messages.html" class="nav-link text-white w-100 d-flex justify-content-between align-items-center active">
+            <div>
+            <i class="fa-solid fa-comments me-2 "></i>
+            <span class="d-none d-sm-inline active">المحادثات</span>
+            </div>
+            <span class="badge bg-danger rounded-pill">3</span>
+        </a>
+        </li>
+        <li class="nav-item w-100">
+        <a href="./chatbot.html" class="nav-link text-white w-100">
+            <i class="fa-solid fa-robot me-2"></i>
+            <span class="d-none d-sm-inline">الشات بوت</span>
+        </a>
+        </li>
+        <li class="nav-item w-100">
+        <a href="./notifications.html" class="nav-link text-white w-100">
+            <i class="fa-solid fa-bell me-2"></i>
+            <span class="d-none d-sm-inline">الإشعارات</span>
+        </a>
+        </li>
+
+          <li class="nav-item mt-4 w-100">
+            <a href="./index.html" class="nav-link text-white w-100 fw-bold">
+              <i class="fa-solid fa-globe me-2"></i>
+              <span class="d-none d-sm-inline">الصفحة الرئيسية</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- محتوى المحادثة -->
+    <div class="col py-5 px-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+          <h5 class="mb-0">المحادثة مع صاحب العمل</h5>
+        </div>
+        <div class="card-body overflow-auto" style="height: 400px;" id="chatBox">
+          <div class="d-flex justify-content-start mb-2">
+            <div class="bg-secondary text-white rounded p-2">مرحبًا، هل أنت متاح للعمل الآن؟</div>
+          </div>
+          <div class="d-flex justify-content-end mb-2">
+            <div class="bg-success text-white rounded p-2">نعم، أنا متاح ويمكنني البدء فورًا.</div>
+          </div>
+          <div class="d-flex justify-content-start mb-2">
+            <div class="bg-secondary text-white rounded p-2">رائع، سنبدأ في الساعة 10 صباحًا.</div>
+          </div>
+        </div>
+        <form onsubmit="sendMessage(event)">
+          <div class="card-footer">
+            <div class="input-group">
+              <input type="text" id="chatInput" class="form-control" placeholder="اكتب رسالتك..." required />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
