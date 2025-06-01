@@ -4,46 +4,46 @@
   <meta charset="UTF-8" />
   <title>المحادثات</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assert/css/base.css">
   <link rel="stylesheet" href="./assert/css/main.css">
+  
 </head>
-<body >
+<body class="bg-light">
 
 <div class="container-fluid">
-  <div class="row">
-    
+  <div class="row flex-nowrap min-vh-100">
+      
     <!-- الشريط الجانبي -->
     <div class="col-auto col-md-3 col-xl-2 px-sm-2 bg-secondary text-white min-vh-100 gap-4">
       <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3">
         <div class="mb-4 w-100 text-center">
-          <img src="./assert/image/logo.png" alt="T JOBS" class="img-fluid w-50">
+          <img src="./assert/image/logo.png" alt="T JOBS" class="img-fluid w-50" />
         </div>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 gap-4" id="menu">
-        <li class="nav-item w-100 ">
-        <a href="./messages.html" class="nav-link text-white w-100 d-flex justify-content-between align-items-center active">
-            <div>
-            <i class="fa-solid fa-comments me-2 "></i>
-            <span class="d-none d-sm-inline active">المحادثات</span>
-            </div>
-            <span class="badge bg-danger rounded-pill">3</span>
-        </a>
-        </li>
-        <li class="nav-item w-100">
-        <a href="./chatbot.html" class="nav-link text-white w-100">
-            <i class="fa-solid fa-robot me-2"></i>
-            <span class="d-none d-sm-inline">الشات بوت</span>
-        </a>
-        </li>
-        <li class="nav-item w-100">
-        <a href="./notifications.html" class="nav-link text-white w-100">
-            <i class="fa-solid fa-bell me-2"></i>
-            <span class="d-none d-sm-inline">الإشعارات</span>
-        </a>
-        </li>
-
+          <li class="nav-item w-100">
+            <a href="./messages.html" class="nav-link text-white w-100 d-flex justify-content-between align-items-center active">
+              <div>
+                <i class="fa-solid fa-comments me-2"></i>
+                <span class="d-none d-sm-inline">المحادثات</span>
+              </div>
+              <span class="badge bg-danger rounded-pill">3</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./chatbot.html" class="nav-link text-white w-100">
+              <i class="fa-solid fa-robot me-2"></i>
+              <span class="d-none d-sm-inline">الشات بوت</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./notifications.html" class="nav-link text-white w-100">
+              <i class="fa-solid fa-bell me-2"></i>
+              <span class="d-none d-sm-inline">الإشعارات</span>
+            </a>
+          </li>
           <li class="nav-item mt-4 w-100">
             <a href="./index.html" class="nav-link text-white w-100 fw-bold">
               <i class="fa-solid fa-globe me-2"></i>
@@ -54,39 +54,72 @@
       </div>
     </div>
 
-    <!-- محتوى المحادثة -->
-    <div class="col py-5 px-4">
-      <div class="card">
-        <div class="card-header bg-primary text-white text-center">
-          <h5 class="mb-0">المحادثة مع صاحب العمل</h5>
+    <div class="col p-0 d-flex flex-grow-1">
+      <div class="d-flex flex-grow-1 shadow-lg bg-white rounded-3 my-4 mx-3 overflow-hidden">
+        
+        <div class="col-md-4 col-lg-3 border-end">
+          <div class="p-3 text-center border-bottom bg-white">
+            <h4 class="mb-0 fw-bold text-primary">محادثاتي</h4>
+          </div>
+          <ul class="list-unstyled mb-0 conversation-list-scroll">
+            <li class="list-group-item list-group-item-action py-3 px-3" data-chat-id="employer">
+              <div class="d-flex align-items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="صورة " class="rounded-circle me-3 border border-2 border-light " style="width: 55px; height: 55px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <h6 class="mb-0 fw-semibold">احمد علي</h6>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item list-group-item-action py-3 px-3" data-chat-id="applicant1">
+              <div class="d-flex align-items-center">
+                <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="صورة" class="rounded-circle me-3 border border-2 border-light" style="width: 55px; height: 55px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <h6 class="mb-0 fw-semibold">محمد علي</h6>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item list-group-item-action py-3 px-3" data-chat-id="applicant2">
+              <div class="d-flex align-items-center">
+                <img src="https://randomuser.me/api/portraits/men/39.jpg" alt="صورة" class="rounded-circle me-3 border border-2 border-light" style="width: 55px; height: 55px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <h6 class="mb-0 fw-semibold">خالد محمود</h6>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
         </div>
-        <div class="card-body overflow-auto" style="height: 400px;" id="chatBox">
-          <div class="d-flex justify-content-start mb-2">
-            <div class="bg-secondary text-white rounded p-2">مرحبًا، هل أنت متاح للعمل الآن؟</div>
+
+        <div class="col-md-8 col-lg-9 d-flex flex-column bg-light">
+          <div class="p-3 bg-primary text-white d-flex align-items-center rounded-top">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="صورة المحادثة" id="chatHeaderImage" class="rounded-circle me-3 border border-2 border-light" style="width: 40px; height: 40px; object-fit: cover;">
+            <h5 class="mb-0 fw-bold" id="chatHeader"> احمد علي</h5>
           </div>
-          <div class="d-flex justify-content-end mb-2">
-            <div class="bg-success text-white rounded p-2">نعم، أنا متاح ويمكنني البدء فورًا.</div>
+          <div class="p-3 flex-grow-1 chat-messages-scroll" id="chatBox">
+            <div class="d-flex justify-content-start mb-3">
+              <div class="p-3 bg-white rounded-3 shadow-sm" style="max-width: 75%;">مرحبًا، هل أنت متاح للعمل الآن؟</div>
+            </div>
+            <div class="d-flex justify-content-end mb-3">
+              <div class="p-3 bg-success text-white rounded-3 shadow-sm" style="max-width: 75%;">نعم، أنا متاح ويمكنني البدء فورًا.</div>
+            </div>
+            <div class="d-flex justify-content-start mb-3">
+              <div class="p-3 bg-white rounded-3 shadow-sm" style="max-width: 75%;">رائع، سنبدأ في الساعة 10 صباحًا.</div>
+            </div>
           </div>
-          <div class="d-flex justify-content-start mb-2">
-            <div class="bg-secondary text-white rounded p-2">رائع، سنبدأ في الساعة 10 صباحًا.</div>
-          </div>
-        </div>
-        <form onsubmit="sendMessage(event)">
-          <div class="card-footer">
+          <form class="p-3 border-top bg-white rounded-bottom">
             <div class="input-group">
-              <input type="text" id="chatInput" class="form-control text-black" placeholder="اكتب رسالتك..." required />
-              <button type="submit" class="btn btn-primary">
+              <input type="text" id="chatInput" class="form-control rounded-pill border-0 bg-light-subtle py-2 ps-3 pe-5 text-dark" placeholder="اكتب رسالتك..." required />
+              <button type="submit" class="btn btn-primary rounded-circle ms-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
                 <i class="fas fa-paper-plane"></i>
               </button>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
