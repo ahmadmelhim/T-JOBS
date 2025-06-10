@@ -21,3 +21,20 @@
     object-fit: cover; 
     opacity: 0.25;
   }
+  #sidebarMenu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    z-index: 9;
+  }
+  #Body{
+    margin-right: 260px;
+  }
+  #toggleMenu{
+    position: fixed;
+    top: 2px;
+    right: 5px;
+    z-index: 99;
+  }

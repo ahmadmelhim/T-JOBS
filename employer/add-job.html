@@ -15,9 +15,70 @@
   </style>
 </head>
 <body>
-
+<button class="btn bg-secColor d-md-none m-3" id="toggleMenu">
+  <i class="fa fa-bars fs-4"></i>
+</button>
 <div class="container mt-5">
-  <div class="mx-auto bg-secColor p-4 p-md-5 rounded-4 shadow">
+  <div>
+    <!-- الشريط الجانبي -->
+    <div id="sidebarMenu" class="px-sm-2 bg-secColor min-vh-100 d-none">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3">
+        <div class="mb-4 w-100 text-center">
+          <img src="../assert/image/logo.png" alt="T JOBS" class="img-fluid w-50">
+        </div>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 gap-4" id="menu">
+          <li class="nav-item w-100">
+            <a href="./dashboard-employer.html" class="nav-link text-black w-100 fw-bold">
+              <i class="fa-solid fa-house me-2"></i>
+              <span class="d-none d-sm-inline">لوحة التحكم</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./employer-profile.html" class="nav-link text-black w-100">
+              <i class="fa-solid fa-user me-2"></i>
+              <span class="d-none d-sm-inline">الملف الشخصي </span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./add-job.html" class="nav-link text-black w-100 active">
+              <i class="fa-solid fa-briefcase me-2"></i>
+              <span class="d-none d-sm-inline">نشر وظيفة جديدة </span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./employer-jobs.html" class="nav-link text-black w-100">
+              <i class="fa-solid fa-list-check me-2"></i>
+              <span class="d-none d-sm-inline">إدارة الوظائف المنشورة</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./job-applications.html" class="nav-link text-black w-100">
+              <i class="fa-solid fa-file-lines me-2"></i>
+              <span class="d-none d-sm-inline">طلبات التوظيف</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./rate-workers.html" class="nav-link text-black w-100">
+              <i class="fa-solid fa-star-half-stroke me-2"></i>
+              <span class="d-none d-sm-inline">تقييم العمال</span>
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a href="./accepted-workers.html" class="nav-link text-black w-100 ">
+              <i class="fa-solid fa-folder-open me-2"></i>
+              <span class="d-none d-sm-inline">سجل المشاريع</span>
+            </a>
+          </li>
+          <li class="nav-item mt-4 w-100">
+            <a href="../index.html" class="nav-link text-black w-100 fw-bold">
+              <i class="fa-solid fa-globe me-2"></i>
+              <span class="d-none d-sm-inline">الصفحة الرئيسية</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <div class="bg-secColor p-4 p-md-5 rounded-3" id="Body">
     <h4 class="mb-4 text-center"><i class="fas fa-briefcase me-2"></i>نشر عمل جديد</h4>
 
     <form>
@@ -72,7 +133,8 @@
       </div>
     </form>
   </div>
+  </div>
 </div>
-
+<script src="./employer.js"></script>
 </body>
 </html>
