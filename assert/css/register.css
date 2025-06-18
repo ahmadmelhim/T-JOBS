@@ -9,7 +9,13 @@
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 50%;
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        width: 80%;
+    }
 }
 
 .signup-box h2 {
@@ -18,10 +24,12 @@
     margin-bottom: 30px;
     font-weight: 600;
 }
+
 .signup-form input.form-control {
     color: #000 !important;
     background-color: #f9f9f9;
 }
+
 .btn-custom {
     background-color: var(--secColor);
     color: #fff;

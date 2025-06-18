@@ -10,97 +10,29 @@ registerSubmit.addEventListener('submit', async (e) => {
     const address = document.getElementById('address').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    
+
     if (password.length < 6) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "error",
-            title: "يجب ان تتكون كلمة المرور من 6 أحرف على الأقل"
-        });
+        showToast("error", "يجب ان تتكون كلمة المرور من 6 أحرف على الأقل");
         return;
     }
-
     if (!/[A-Z]/.test(password)) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "error",
-            title: "يجب ان تحتوي كلمة المرور على حرف كبير واحد على الأقل"
-        });
+        showToast("error", "يجب ان تحتوي كلمة المرور على حرف كبير واحد على الأقل");
         return;
     }
-
     if (!/[a-z]/.test(password)) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "error",
-            title: "يجب ان تحتوي كلمة المرور على حرف صغير واحد على الأقل"
-        });
+        showToast("error", "يجب ان تحتوي كلمة المرور على حرف صغير واحد على الأقل");
         return;
     }
     if (!/[0-9]/.test(password)) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "error",
-            title: "يجب ان تحتوي كلمة المرور على رقم واحد على الأقل"
-        });
+        showToast("error", "يجب ان تحتوي كلمة المرور على رقم واحد على الأقل");
+        return;
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        showToast("error", "يجب أن تحتوي كلمة المرور على رمز خاص مثل * أو @ أو !");
         return;
     }
     if (password !== confirmPassword) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "error",
-            title: "كلمة المرور وتأكيدها غير متطابقين"
-        });
+        showToast("error", "كلمة المرور وتأكيدها غير متطابقين");
         return;
     }
 
@@ -108,7 +40,7 @@ registerSubmit.addEventListener('submit', async (e) => {
         const response = await fetch('http://tjob.runasp.net/api/Accounts/Register', {
             method: "POST",
             headers: {
-                "content-type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 userName,
@@ -120,28 +52,37 @@ registerSubmit.addEventListener('submit', async (e) => {
                 password,
                 confirmPassword
             })
-        })
-        console.log(response)
+        });
+
         if (response.ok) {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                }
+            showToast("success", "تم انشاء الحساب بنجاح").then(() => {
+                window.location.href = 'login.html';
             });
-            Toast.fire({
-                icon: "success",
-                title: "تم انشاء الحساب بنجاح"
-            }).then(() => {
-                window.location.pathname = 'login.html'
-            })
+        } else if (response.status === 400) {
+            const errors = await response.json();
+            errors.forEach(error => {
+                showToast("error", error.description);
+            });
+        } else {
+            showToast("error", "فشل إنشاء الحساب، حاول مرة أخرى");
         }
     } catch (err) {
-        console.log(err)
+        console.error("فشل في إرسال البيانات:", err);
+        showToast("error", "حدث خطأ أثناء إرسال البيانات");
     }
-})
+});
+
+function showToast(icon, title) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+    });
+    return Toast.fire({ icon, title });
+}
