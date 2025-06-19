@@ -6,22 +6,41 @@ document.addEventListener("DOMContentLoaded", () => {
         return urlParams.get(param);
     };
 
-    const userId = decodeURIComponent(getQueryParam("userId"));
-    const token = decodeURIComponent(getQueryParam("token"));
-    const email = decodeURIComponent(getQueryParam("email"));
+    // استخراج email و code من عنوان URL
+    const emailFromUrl = decodeURIComponent(getQueryParam("email") || ''); // إضافة || '' للتعامل مع القيم الفارغة
+    const codeFromUrl = decodeURIComponent(getQueryParam("code") || '');   // إضافة || '' للتعامل مع القيم الفارغة
+
+    // الحصول على مراجع لحقول الإدخال في HTML
+    const emailInput = document.getElementById("email");
+    const codeInput = document.getElementById("code");
+    const newPasswordInput = document.getElementById("newPassword");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+
+    // ملء حقول البريد الإلكتروني ورمز التحقق في النموذج إذا كانت القيم موجودة في عنوان URL
+    if (emailInput && emailFromUrl) {
+        emailInput.value = emailFromUrl;
+    }
+    if (codeInput && codeFromUrl) {
+        codeInput.value = codeFromUrl;
+    }
 
     resetForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const password = document.getElementById("newPassword").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
+        // قراءة القيم من حقول الإدخال في النموذج (التي قد تكون قد تم ملؤها مسبقًا أو تم تعديلها يدويًا)
+        const email = emailInput.value;
+        const code = codeInput.value;
+        const password = newPasswordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        // تسجيل البيانات التي سيتم إرسالها للتحقق
         console.log({
-            userId,
-            token,
             email,
+            code,
             password,
             confirmPassword
         });
+
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -34,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        // التحقق من صحة كلمة المرور (كما هو موجود لديك)
         if (password.length < 6) {
             Toast.fire({ icon: "error", title: "يجب أن تكون كلمة المرور 6 أحرف على الأقل" });
             return;
@@ -66,12 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    userId,
-                    token,
-                    email,
-                    password,
-                    confirmPassword
-                })
+                    code: code,
+                    email: email,
+                    password: password,
+                    confirmPassword: confirmPassword
+                } )
             });
 
             if (response.ok) {
@@ -79,13 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "login.html";
                 });
             } else {
-                const text = await response.text();
-                console.log("Server response text:", text);
-                Toast.fire({ icon: "error", title: "الطلب فشل، راجع الكونسول" });
+                const errorData = await response.json(); // قم بتحليل الاستجابة كـ JSON
+                console.log("Server response data:", errorData); // <--- طباعة كائن الخطأ كاملاً
+
+                let errorMessage = "الطلب فشل";
+                if (errorData) {
+                    if (errorData.errors) {
+                        // إذا كان هناك كائن أخطاء (عادةً ما يكون في حالة 400 Validation Error)
+                        const errorMessages = Object.values(errorData.errors).flat();
+                        if (errorMessages.length > 0) {
+                            errorMessage = errorMessages.join(", ");
+                        }
+                    } else if (errorData.title) {
+                        // إذا كان هناك حقل عنوان (مثل "One or more validation errors occurred.")
+                        errorMessage = errorData.title;
+                    } else if (typeof errorData === 'string') {
+                        // إذا كانت الاستجابة نصًا عاديًا
+                        errorMessage = errorData;
+                    }
+                }
+                Toast.fire({ icon: "error", title: errorMessage });
             }
 
         } catch (error) {
-            console.error(error);
+            console.error("فشل الاتصال بالخادم:", error); // طباعة الخطأ كاملاً في الكونسول
             Toast.fire({ icon: "error", title: "فشل الاتصال بالخادم" });
         }
     });
