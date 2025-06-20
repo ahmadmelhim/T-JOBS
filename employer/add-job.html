@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <title>نشر عمل جديد</title>
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="../assert/css/base.css" />
   <link rel="stylesheet" href="../assert/css/main.css" />
 </head>
+
 <body>
   <button class="btn bg-secColor d-md-none m-3" id="toggleMenu">
     <i class="fa fa-bars fs-4"></i>
@@ -21,7 +23,8 @@
           <div class="mb-4 w-100 text-center">
             <img src="../assert/image/logo.png" alt="T JOBS" class="img-fluid w-50">
           </div>
-          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 gap-4" id="menu">
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 gap-4"
+            id="menu">
             <li class="nav-item w-100">
               <a href="./dashboard-employer.html" class="nav-link text-black w-100 fw-bold">
                 <i class="fa-solid fa-house me-2"></i> <span class="d-none d-sm-inline">لوحة التحكم</span>
@@ -39,7 +42,8 @@
             </li>
             <li class="nav-item w-100">
               <a href="./employer-jobs.html" class="nav-link text-black w-100">
-                <i class="fa-solid fa-list-check me-2"></i> <span class="d-none d-sm-inline">إدارة الوظائف المنشورة</span>
+                <i class="fa-solid fa-list-check me-2"></i> <span class="d-none d-sm-inline">إدارة الوظائف
+                  المنشورة</span>
               </a>
             </li>
             <li class="nav-item w-100">
@@ -71,45 +75,106 @@
         <h2 class="text-center fw-bold mt-3"><i class="fas fa-briefcase me-2"></i>نشر عمل جديد</h2>
 
         <div class="container p-4">
-          <form>
+          <form id="postJobForm">
             <div class="row g-3">
               <div class="col-12">
                 <label for="title" class="form-label">عنوان العمل</label>
-                <input type="text" class="form-control text-black" id="title" placeholder="مثال: تركيب دهان">
+                <input type="text" class="form-control text-black" id="title" name="Title"
+                  placeholder="مثال: تركيب دهان" required>
               </div>
               <div class="col-12">
                 <label for="description" class="form-label">تفاصيل العمل</label>
-                <textarea class="form-control text-black" id="description" rows="4" placeholder="وضح ما هو المطلوب بالضبط وعدد الساعات/الأيام..."></textarea>
+                <textarea class="form-control text-black" id="description" name="Description" rows="4"
+                  placeholder="وضح ما هو المطلوب بالضبط وعدد الساعات/الأيام..." required></textarea>
+              </div>
+
+              <div class="col-md-6">
+                <label for="state" class="form-label">الولاية/المحافظة</label>
+                <input type="text" class="form-control text-black" id="state" name="State"
+                  placeholder="مثال: الضفة الغربية" required>
               </div>
               <div class="col-md-6">
-                <label for="location" class="form-label">الموقع</label>
-                <input type="text" class="form-control text-black" id="location" placeholder="مثال: جنين - قباطية">
+                <label for="city" class="form-label">المدينة</label>
+                <select id="city" name="City" class="form-select text-black" required>
+                  <option value="" disabled selected>اختر المدينة</option>
+                  <option value="القدس">القدس</option>
+                  <option value="رام الله">رام الله</option>
+                  <option value="البيرة">البيرة</option>
+                  <option value="الخليل">الخليل</option>
+                  <option value="بيت لحم">بيت لحم</option>
+                  <option value="نابلس">نابلس</option>
+                  <option value="طولكرم">طولكرم</option>
+                  <option value="قلقيلية">قلقيلية</option>
+                  <option value="جنين">جنين</option>
+                  <option value="سلفيت">سلفيت</option>
+                  <option value="أريحا">أريحا</option>
+                  <option value="طوباس">طوباس</option>
+                  <option value="غزة">غزة</option>
+                  <option value="خان يونس">خان يونس</option>
+                  <option value="رفح">رفح</option>
+                  <option value="دير البلح">دير البلح</option>
+                  <option value="جباليا">جباليا</option>
+                  <option value="بيت حانون">بيت حانون</option>
+                  <option value="بيت لاهيا">بيت لاهيا</option>
+                  <option value="النصيرات">النصيرات</option>
+                  <option value="المغازي">المغازي</option>
+                  <option value="البريج">البريج</option>
+                </select>
               </div>
+
+              <div class="col-md-6">
+                <label for="street" class="form-label">الشارع</label>
+                <input type="text" class="form-control text-black" id="street" name="Street"
+                  placeholder="مثال: شارع حيفا" required>
+              </div>
+              <div class="col-md-6">
+                <label for="home" class="form-label">رقم المنزل/المبنى</label>
+                <input type="text" class="form-control text-black" id="home" name="Home" placeholder="مثال: رقم 10"
+                  required>
+              </div>
+
               <div class="col-md-6">
                 <label for="date" class="form-label">تاريخ التنفيذ</label>
-                <input type="date" class="form-control text-black" id="date">
+                <input type="date" class="form-control text-black" id="date" name="DateTime" required>
               </div>
               <div class="col-md-6">
-                <label for="payment" class="form-label">الأجر (باليوم أو الساعة)</label>
-                <input type="text" class="form-control text-black" id="payment" placeholder="مثال: 150 شيقل / يوم">
+                <label for="payment" class="form-label">الأجر (بالشيقل )</label>
+                <input type="number" class="form-control text-black" id="payment" name="Price" placeholder="150" min="1"
+                  step="0.01" required>
               </div>
               <div class="col-md-6">
                 <label for="category" class="form-label">نوع العمل</label>
-                <select id="category" class="form-select text-black">
-                  <option disabled selected>اختر المجال</option>
-                  <option>نجارة</option>
-                  <option>كهرباء</option>
-                  <option>دهان</option>
-                  <option>بلاط</option>
-                  <option>المنيوم</option>
-                  <option>حداد</option>
-                  <option>أخرى</option>
+                <select id="category" class="form-select text-black" name="Type" required>
+                  <option value="" disabled selected>اختر المجال</option>
+
+                  <option value="نجارة">نجارة</option>
+                  <option value="كهرباء">كهرباء</option>
+                  <option value="دهان">دهان</option>
+                  <option value="بلاط">بلاط</option>
+                  <option value="المنيوم">المنيوم</option>
+                  <option value="حداد">حداد</option>
+                  <option value="تنظيف">تنظيف</option>
+                  <option value="نقل أثاث">نقل أثاث</option>
+                  <option value="صيانة عامة">صيانة عامة</option>
+                  <option value="تركيب ستائر">تركيب ستائر</option>
+                  <option value="زراعة وتنسيق حدائق">زراعة وتنسيق حدائق</option>
+                  <option value="تغليف وشحن">تغليف وشحن</option>
+                  <option value="توصيل طلبات">توصيل طلبات</option>
+                  <option value="تنظيم فعاليات">تنظيم فعاليات</option>
+                  <option value="عمال مطاعم">عمال مطاعم</option>
+                  <option value="مساعد بناء">مساعد بناء</option>
+                  <option value="تحميل وتنزيل بضائع">تحميل وتنزيل بضائع</option>
+                  <option value="تصوير مناسبات">تصوير مناسبات</option>
+                  <option value="أخرى">أخرى</option>
                 </select>
+
               </div>
+
               <div class="col-12">
-                <label for="contact" class="form-label">طريقة التواصل</label>
-                <input type="text" class="form-control text-black" id="contact" placeholder="رقم الهاتف أو واتساب">
+                <label for="mainImg" class="form-label">صورة رئيسية للعمل (اختياري)</label>
+                <input type="file" class="form-control text-black" id="mainImg" name="MainImg" accept="image/*">
               </div>
+
               <div class="text-center mt-4">
                 <button type="submit" class="btn bg-blueColor px-4 btn-lg">
                   <i class="fas fa-plus-circle me-2"></i>نشر العمل
@@ -122,7 +187,10 @@
 
     </div>
   </div>
-  <script src="./employer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/employer.js"></script>
+  <script src="./js/add-job.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

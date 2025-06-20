@@ -45,116 +45,104 @@
             <div class="filter-title mb-3 text-center fw-bold">فلاتر البحث</div>
             <div class="mb-3">
               <label class="form-label">المجال</label>
-              <select class="form-select text-black-50">
-                <option class="text-black-50">الكل</option>
-                <option class="text-black-50">كهرباء</option>
-                <option class="text-black-50">نجارة</option>
-                <option class="text-black-50">دهان</option>
-                <option class="text-black-50">حداد</option>
-                <option class="text-black-50">بلاط</option>
-                <option class="text-black-50">قصارة</option>
-                <option class="text-black-50">المنيوم</option>
+              <select id="typeFilter" class="form-select text-black-50">
+                <option value="">الكل</option>
+                <option value="نجارة">نجارة</option>
+                  <option value="كهرباء">كهرباء</option>
+                  <option value="دهان">دهان</option>
+                  <option value="بلاط">بلاط</option>
+                  <option value="المنيوم">المنيوم</option>
+                  <option value="حداد">حداد</option>
+                  <option value="تنظيف">تنظيف</option>
+                  <option value="نقل أثاث">نقل أثاث</option>
+                  <option value="صيانة عامة">صيانة عامة</option>
+                  <option value="تركيب ستائر">تركيب ستائر</option>
+                  <option value="زراعة وتنسيق حدائق">زراعة وتنسيق حدائق</option>
+                  <option value="تغليف وشحن">تغليف وشحن</option>
+                  <option value="توصيل طلبات">توصيل طلبات</option>
+                  <option value="تنظيم فعاليات">تنظيم فعاليات</option>
+                  <option value="عمال مطاعم">عمال مطاعم</option>
+                  <option value="مساعد بناء">مساعد بناء</option>
+                  <option value="تحميل وتنزيل بضائع">تحميل وتنزيل بضائع</option>
+                  <option value="تصوير مناسبات">تصوير مناسبات</option>
+                  <option value="أخرى">أخرى</option>
               </select>
             </div>
             <div class="mb-3">
               <label class="form-label">المدينة</label>
-              <select class="form-select text-black-50">
-                <option class="text-black-50">الكل</option>
-                <option class="text-black-50">جنين</option>
-                <option class="text-black-50">نابلس</option>
-                <option class="text-black-50">رام الله</option>
-                <option class="text-black-50">الخليل</option>
-                <option class="text-black-50">بيت لحم</option>
-                <option class="text-black-50">طولكرم</option>
+              <select id="cityFilter" class="form-select text-black-50">
+                <option value="">الكل</option>
+                <option value="القدس">القدس</option>
+                  <option value="رام الله">رام الله</option>
+                  <option value="البيرة">البيرة</option>
+                  <option value="الخليل">الخليل</option>
+                  <option value="بيت لحم">بيت لحم</option>
+                  <option value="نابلس">نابلس</option>
+                  <option value="طولكرم">طولكرم</option>
+                  <option value="قلقيلية">قلقيلية</option>
+                  <option value="جنين">جنين</option>
+                  <option value="سلفيت">سلفيت</option>
+                  <option value="أريحا">أريحا</option>
+                  <option value="طوباس">طوباس</option>
+                  <option value="غزة">غزة</option>
+                  <option value="خان يونس">خان يونس</option>
+                  <option value="رفح">رفح</option>
+                  <option value="دير البلح">دير البلح</option>
+                  <option value="جباليا">جباليا</option>
+                  <option value="بيت حانون">بيت حانون</option>
+                  <option value="بيت لاهيا">بيت لاهيا</option>
+                  <option value="النصيرات">النصيرات</option>
+                  <option value="المغازي">المغازي</option>
+                  <option value="البريج">البريج</option>
               </select>
             </div>
             <div class="mb-3">
               <label class="form-label">تاريخ النشر</label>
-              <select class="form-select text-black-50">
-                <option class="text-black-50">أي وقت</option>
-                <option class="text-black-50">اليوم</option>
-                <option class="text-black-50">آخر 3 أيام</option>
-                <option class="text-black-50">آخر أسبوع</option>
+              <select id="dateFilter" class="form-select text-black-50">
+                <option value="">أي وقت</option>
+                <option value="today">اليوم</option>
+                <option value="3days">آخر 3 أيام</option>
+                <option value="week">آخر أسبوع</option>
               </select>
             </div>
-            <button class="btn bg-blueColor w-100">تطبيق الفلاتر</button>
+            <button id="applyFilters" class="btn bg-blueColor w-100">تطبيق الفلاتر</button>
           </div>
         </div>
 
         <!-- Job Listings -->
         <div class="col-md-9 mt-5 ">
-          <div class="row g-3 ">
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">فني كهرباء</h5>
-                <p class="mb-1 ">طولكرم | تم النشر: قبل يوم</p>
-                <p class="mb-0">مطلوب فني كهرباء للعمل في مشروع تركيب تمديدات داخلية</p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
+          <!-- Loading indicator -->
+          <div id="loadingIndicator" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">جاري التحميل...</span>
             </div>
+            <p class="mt-2">جاري تحميل الوظائف...</p>
+          </div>
 
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">دهان</h5>
-                <p class="mb-1 ">نابلس | تم النشر: قبل يومين</p>
-                <p class="mb-0">مطلوب فني دهان للعمل في دهان منزل كامل</p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
+          <!-- Error message -->
+          <div id="errorMessage" class="alert alert-danger d-none" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <span id="errorText">حدث خطأ أثناء تحميل الوظائف. يرجى المحاولة مرة أخرى.</span>
+          </div>
 
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">بلاط</h5>
-                <p class="mb-1 ">رام الله | تم النشر: قبل يومين</p>
-                <p class="mb-0">مطلوب فني بلاط للعمل في تبليط شقة سكنية قيد الانشاء</p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
+          <!-- No jobs message -->
+          <div id="noJobsMessage" class="text-center py-5 d-none">
+            <i class="fas fa-briefcase fa-3x text-muted mb-3"></i>
+            <h5 class="text-muted">لا توجد وظائف متاحة حاليًا</h5>
+            <p class="text-muted">يرجى المحاولة مرة أخرى لاحقًا أو تعديل فلاتر البحث.</p>
+          </div>
 
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">قصارة</h5>
-                <p class="mb-1 ">الخليل | تم النشر: قبل 4 ايام</p>
-                <p class="mb-0">مطلوب فني قصارة للعمل في قصارة شقة سكنية قيد الانشاء</p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
-
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">المنيوم</h5>
-                <p class="mb-1 ">جنين | تم النشر: قبل إسبوع</p>
-                <p class="mb-0">مطلوب فني المنيوم لتفصيل شبابيك منزل </p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
-
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold">نجار</h5>
-                <p class="mb-1 ">بيت لحم | تم النشر: قبل إسبوعيين</p>
-                <p class="mb-0">مطلوب نجار للعمل في مطابخ داخلية</p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
-
-            <div class="col-md-12 bg-mainColor rounded-4">
-              <div class=" p-3 shadow-sm rounded job-card">
-                <h5 class="mb-1 fw-bold"> حداد</h5>
-                <p class="mb-1 ">جنين | تم النشر: قبل شهر</p>
-                <p class="mb-0">مطلوب فني حداد لتفصيل باب خارجي </p>
-                <a href="./worker/worker-job-details.html" class="btn btn-sm  mt-2 bg-blueColor">عرض التفاصيل</a>
-              </div>
-            </div>
+          <!-- Jobs container -->
+          <div id="jobsContainer" class="row g-3">
+            <!-- سيتم ملء الوظائف هنا ديناميكيًا -->
           </div>
 
           <!-- Pagination -->
-          <nav class="mt-4">
-            <ul class="pagination justify-content-center ">
-              <li class="page-item disabled"><a class="page-link text-black" href="#">السابق</a></li>
-              <li class="page-item active "><a class="page-link text-black" href="#">1</a></li>
-              <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
-              <li class="page-item"><a class="page-link text-black" href="#">التالي</a></li>
+          <nav id="paginationContainer" class="mt-4 d-none">
+            <ul class="pagination justify-content-center">
+              <li class="page-item" id="prevPage"><a class="page-link text-black" href="#">السابق</a></li>
+              <li class="page-item active"><a class="page-link text-black" href="#" data-page="1">1</a></li>
+              <li class="page-item" id="nextPage"><a class="page-link text-black" href="#">التالي</a></li>
             </ul>
           </nav>
         </div>
@@ -192,7 +180,9 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assert/js/jobs.js"></script>
 </body>
 
 </html>

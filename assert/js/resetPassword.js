@@ -28,13 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = newPasswordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
-        console.log({
-            email,
-            code,
-            password,
-            confirmPassword
-        });
-
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
