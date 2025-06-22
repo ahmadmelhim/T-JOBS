@@ -55,7 +55,11 @@ registerSubmit.addEventListener('submit', async (e) => {
   };
 
   try {
+<<<<<<< HEAD
     const response = await fetch('http://tjob.tryasp.net/api/Accounts/Register', {
+=======
+    const response = await fetch('http://tjob.runasp.net/api/Accounts/Register', {
+>>>>>>> d7cd93a50f6746f8c8e50b799bec5c4abaf70f42
       method: "POST",
       headers: {
         'Content-Type': 'application/json' // تحديد نوع المحتوى كـ JSON

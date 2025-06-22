@@ -215,7 +215,11 @@ document.addEventListener("DOMContentLoaded", () => {
             noJobsMessage.classList.add("d-none");
             paginationContainer.classList.add("d-none");
 
+<<<<<<< HEAD
             const response = await fetch("http://tjob.tryasp.net/api/Employer/Requests");
+=======
+            const response = await fetch("http://tjob.runasp.net/api/Requests" );
+>>>>>>> d7cd93a50f6746f8c8e50b799bec5c4abaf70f42
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

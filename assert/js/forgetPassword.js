@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
+<<<<<<< HEAD
             const response = await fetch('http://tjob.tryasp.net/api/Accounts/ForgetPassword', {
+=======
+            const response = await fetch('http://tjob.runasp.net/api/Accounts/ForgetPassword', {
+>>>>>>> d7cd93a50f6746f8c8e50b799bec5c4abaf70f42
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
